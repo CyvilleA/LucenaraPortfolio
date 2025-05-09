@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyville Aleese Lucenara - Portfolio</title>
+    <link rel="stylesheet" href="cy.css">
+</head>
+<body>
+    <nav>
+        <div class="brand">🌸 Cyville's Space</div>
+        <div class="nav-toggle" id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="#about">About Me</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#work">Work Experience</a>
+            <a href="#hobbies">Hobbies</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <div class="cover-photo">
+                <img src="cover.jpg" alt="Cover Photo">
+            </div>
+
+            <div class="profile-container">
+                <img src="me.jpg" alt="Cyville" class="profile-pic">
+            </div>
+            <h1>Cyville Aleese Lucenara</h1>
+            <p id="welcome-text">Welcome to my personal portfolio! 🌸</p>
+        </header>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi! I'm Cyville, a passionate student with a love for technology, music, and the arts. I enjoy learning new things and exploring creative ways to express myself. Let's make the world a little cuter together! 🌈</p>
+        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <ul>
+                <li><strong>Holy Name University</strong> - Gradeschool.</li>
+                <li><strong>University of Bohol</strong> - Highschool- STEM</li>
+                <li><strong>Holy Name University</strong> -College:Aspiring university student, learning C programming and web development.</li>
+            </ul>
+            
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>🎤 Singing</li>
+                <li>💃 Dancing</li>
+                <li>🎮 Gaming</li>
+                <li>📝 Multitasking</li>
+            </ul>
+        </section>
+        <section id="work">
+            <h2>Work Experience</h2>
+            <ul>
+                <li>💬 Customer Service Representative</li>
+                <li>🎯 Freelancer</li>
+                <li>📱 Social Media Marketing</li>
+            </ul>
+        </section>
+        <section id="hobbies">
+            <h2>Hobbies</h2>
+            <ul>
+                <li>🎥 Watching Movies</li>
+                <li>🦋 Scrolling in Social Media</li>
+                <li>🎮 Games</li>
+                <li>💤 Sleeping</li>
+            </ul>
+        </section>
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <p>Check out my favorite moments! 📸</p>
+            <div class="gallery">
+                <img src="fave1.jpg" alt="Moment 1">
+                <img src="fave2.jpg" alt="Moment 2">
+                <img src="fave3.jpg" alt="Moment 3">
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Email: aleese100421@gmail.com<br>Phone: 09163000120</p>
+        </section>
+        <footer>
+            <p>🌸 Cyville Aleese Lucenara © 2023</p>
+        </footer>
+    </div>
+
+    <script>
+        // Toggle Mobile Navbar
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Smooth Scroll for Internal Links
+        const links = document.querySelectorAll('.nav-links a');
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                navLinks.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+
+        // Welcome Text Animation
+        window.addEventListener('load', () => {
+            const welcomeText = document.getElementById('welcome-text');
+            const message = welcomeText.textContent;
+            welcomeText.textContent = '';
+            let i = 0;
+            function typeWriter() {
+                if (i < message.length) {
+                    welcomeText.textContent += message.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+            typeWriter();
+        });
+    </script>
+</body>
+</html>
