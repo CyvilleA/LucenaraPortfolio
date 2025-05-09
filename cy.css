@@ -22,6 +22,7 @@
     filter: brightness(50%);
 }
 
+
 .profile-container {
     position: absolute;
     top: 150px; 
@@ -39,10 +40,12 @@
 }
 
 
+
 body {
     background-color: #FFFAF3;
     color: #333;
 }
+
 
 nav {
     background-color: #FFB6C1;
@@ -72,6 +75,7 @@ nav .nav-links a {
 nav .nav-links a:hover {
     color: #FFF5EE;
 }
+
 
 .container {
     margin-top: 80px;
